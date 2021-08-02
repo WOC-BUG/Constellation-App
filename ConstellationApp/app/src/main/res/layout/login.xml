@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/starIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/star_icon"/>
+
+    <!--  输入框  -->
+    <LinearLayout
+        android:id="@+id/messageLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/starIcon"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/fortune_text_border"
+        android:padding="10dp"
+        android:layout_margin="20dp">
+
+        <!--  用户名  -->
+        <LinearLayout
+            android:id="@+id/userNameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                style="@style/adverbContentTextSize"
+                android:text="@string/user_name"/>
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:background="@drawable/fortune_text_border"
+                android:hint="请输入用户名"
+                style="@style/adverbContentTextSize"
+                android:autofillHints="请输入用户名" />
+        </LinearLayout>
+
+        <!--  密码  -->
+        <LinearLayout
+            android:id="@+id/userPassWordLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                style="@style/adverbContentTextSize"
+                android:text="@string/password"/>
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:padding="10dp"
+                android:background="@drawable/fortune_text_border"
+                android:inputType="textPassword"
+                android:hint="请输入密码"
+                style="@style/adverbContentTextSize"
+                android:autofillHints="请输入密码" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

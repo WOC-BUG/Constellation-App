@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">星星点灯</string>
+    <string name="fortune">运势</string>
+    <string name="community">社区</string>
+    <string name="divination">占卜</string>
+    <string name="home">我的</string>
+    <string name="tarot_card">塔罗牌</string>
+    <string name="click_to_divine">点击占卜</string>
+    <string name="tarot_info">\t\t\t\t塔罗牌，由“TAROT”一词音译而来，被称为“大自然的奥秘库”。它是西方古老的占卜工具，中世纪起流行于欧洲，其起源一直是个谜。 \n\t\t\t\t塔罗共78张牌，其中大阿尔卡那牌22张，小阿尔卡那牌56张，可分别使用进行占卜，也可将78张混合共同使用进行占卜。值得一提的是，塔罗牌并非指固定的一种牌，实际上塔罗牌种类繁多，至少也有上千种，但它们其实大多数都是由世界三大塔罗体系为蓝本延伸而来的。</string>
+    <string name="white_background">white background</string>
+    <string name="tarot_bg_purple">tarot_bg_purple</string>
+    <string name="follow">+关注</string>
+    <string name="announce">发帖</string>
+    <string name="details">详情</string>
+    <string name="submit">发送</string>
+    <string name="test">测试</string>
+
+    <string name="current_user">Monster</string>
+    <string name="user1_img">https://c-ssl.duitang.com/uploads/item/201812/30/20181230144326_yzofb.jpg</string>
+    <string name="user2">飞小猪</string>
+    <string name="user2_img">https://c-ssl.duitang.com/uploads/item/202008/16/20200816045328_tjwfZ.jpeg</string>
+    <string name="user3">喜大狼</string>
+    <string name="user3_img">http://pic4.zhimg.com/50/v2-3d259dde90d4f5dd09fb8b2a8589df1f_hd.jpg</string>
+    <string name="user4">Sunny</string>
+    <string name="user4_img">https://c-ssl.duitang.com/uploads/blog/202007/26/20200726010418_wjkoh.jpg</string>
+    <string name="user5">Luckylili</string>
+    <string name="user5_img">https://c-ssl.duitang.com/uploads/item/202005/05/20200505115120_ncrgj.jpg</string>
+    <string name="user6">Healer</string>
+    <string name="user6_img">https://c-ssl.duitang.com/uploads/item/201504/28/20150428212725_yetzF.jpeg</string>
+    <string name="user7">今天早睡了吗</string>
+    <string name="user7_img">http://pic4.zhimg.com/50/v2-fde5891065510ef51e4c8dc19f6f3aff_hd.jpg</string>
+    <string name="user8">甜瓜仔</string>
+    <string name="user8_img">http://b-ssl.duitang.com/uploads/item/201901/04/20190104222555_Rvvyu.thumb.700_0.jpeg</string>
+    <string name="click_return_btn">点击返回</string>
+    <string name="testing">测一测</string>
+    <string name="user_name">用户名</string>
+    <string name="password">密码</string>
+    <string name="birthday">生日</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+    <string name="go_to_register">没有账号？去注册</string>
+    <string name="go_to_login">已有账号？去登录</string>
+</resources>

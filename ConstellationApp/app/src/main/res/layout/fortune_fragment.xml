@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 搜索框的部分 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+<!--
+    <EditText
+        android:id="@+id/inputSign"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="10dp"
+        android:drawablePadding="5dp"
+        android:hint="输入星座即可查看运势"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        style="@style/adverbContentTextSize" />
+        -->
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:completionThreshold="1"
+            android:hint="请输入您的星座"
+            android:layout_weight="7"/>
+
+        <Button
+        android:id="@+id/searchFortune"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="20dp"
+        android:background="@mipmap/button"
+        android:onClick="onclick"
+        android:text="运势查询"
+        android:textColor="@color/white"
+        android:layout_weight="3"
+        style="@style/littleTextSize" />
+
+</LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- 显示今日黄历 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/fragImage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="5dp"
+                        android:src="@mipmap/calendar" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="今日黄历"
+                        android:textColor="@color/mainColor"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/fortune_text_border">
+
+                    <TextView
+                        android:id="@+id/calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="3dp"
+                        android:text="2021-06-20   甲午(马)年八月十八"
+                        android:textColor="@color/deepGray" />
+
+                    <TextView
+                        android:id="@+id/wuxingTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/calendar"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="五行："
+                        android:textColor="@color/deepGray" />
+
+                    <TextView
+                        android:id="@+id/wuxing"
+                        style="@style/adverbContentTextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/calendar"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/wuxingTitle"
+                        android:text="井泉水 建执位"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/chongshaTitle"
+                        style="@style/adverbContentTextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/calendar"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/wuxing"
+                        android:text="冲煞："
+                        android:textColor="@color/deepGray" />
+
+                    <TextView
+                        android:id="@+id/chongsha"
+                        style="@style/adverbContentTextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/calendar"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/chongshaTitle"
+                        android:text="冲兔(己卯)煞东"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/baijiTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/wuxingTitle"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="彭祖百忌："
+                        android:textColor="@color/deepGray" />
+
+                    <TextView
+                        android:id="@+id/baiji"
+                        style="@style/adverbContentTextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/wuxingTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/baijiTitle"
+                        android:text="乙不栽植千株不长 酉不宴客醉坐颠狂"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/jishenTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/baijiTitle"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="吉神宜趋："
+                        android:textColor="@color/deepGray" />
+
+                    <TextView
+                        android:id="@+id/jishen"
+                        style="@style/adverbContentTextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/baijiTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/jishenTitle"
+                        android:text="官日 六仪 益後 月德合 除神 玉堂 鸣犬"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/xiongshenTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/jishenTitle"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="凶神宜趋："
+                        android:textColor="@color/deepGray" />
+
+                    <TextView
+                        android:id="@+id/xiongshen"
+                        style="@style/adverbContentTextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/jishenTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/xiongshenTitle"
+                        android:text="月建 小时 土府 月刑 厌对 招摇 五离"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/yiTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/xiongshenTitle"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="宜："
+                        android:textColor="@color/green" />
+
+                    <TextView
+                        android:id="@+id/yi"
+                        style="@style/adverbContentTextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/xiongshenTitle"
+                        android:layout_marginTop="5dp"
+                        android:maxLength="30"
+                        android:ellipsize="end"
+                        android:layout_toRightOf="@+id/yiTitle"
+                        android:text="祭祀 出行 扫舍 馀事勿取"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/jiTitle"
+                        style="@style/adverbContentTextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/yiTitle"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="忌："
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:id="@+id/ji"
+                        style="@style/adverbContentTextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_below="@+id/yiTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@+id/jiTitle"
+                        android:maxLength="30"
+                        android:ellipsize="end"
+                        android:text="诸事不宜"
+                        android:textColor="@color/black" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- 显示今日、本周、本月星座运势 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <Button
+                        android:id="@+id/today"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@mipmap/button"
+                        android:onClick="onclick"
+                        android:text="今日"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_weight="1"/>
+
+                    <Button
+                        android:id="@+id/week"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@mipmap/button"
+                        android:onClick="onclick"
+                        android:text="本周"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_weight="1" />
+
+
+                    <Button
+                        android:id="@+id/month"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@mipmap/button"
+                        android:onClick="onclick"
+                        android:text="本月"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_weight="1" />
+
+
+                    <Button
+                        android:id="@+id/year"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@mipmap/button"
+                        android:onClick="onclick"
+                        android:text="本年"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/fortune_text_border"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/fortuneInformation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="运势信息：" />
+
+
+                    <Button
+                        android:id="@+id/share_report"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="11dp"
+                        android:background="@mipmap/share"
+                        android:onClick="onclick"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/showFortune"
+                        style="@style/adverbContentTextSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="185dp"
+                        android:layout_below="@+id/fortuneInformation"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="10dp"
+                        android:text="这是一个测试的文本信息啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
+                        android:textColor="#2c2c2c" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/fortune_text_border"
+                tools:ignore="WebViewLayout">
+
+                <TextView
+                    android:id="@+id/cloudText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    style="@style/adverbContentTextSize"
+                    android:text="占星词云图"/>
+                <ImageView
+                    android:id="@+id/cloud"
+                    android:layout_margin="10dp"
+                    android:layout_alignTop="@id/cloudText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:src="@mipmap/star_cloud"/>
+
+            </RelativeLayout>
+
+            <!-- ECharts页1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/fortune_text_border"
+                android:gravity="center"
+                tools:ignore="WebViewLayout">
+
+                <WebView
+                    android:id="@+id/webView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- ECharts页2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/fortune_text_border"
+                android:gravity="center"
+                tools:ignore="WebViewLayout">
+
+                <WebView
+                    android:id="@+id/webView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--Echarts页3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/fortune_text_border"
+                android:gravity="center"
+                tools:ignore="WebViewLayout"
+                >
+                <WebView
+                    android:id="@+id/webView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

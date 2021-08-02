@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <!-- 头部依赖 -->
+<head>
+    <meta charset="utf-8">
+        <title>ECharts</title>
+        <script src="echarts.min.js"></script>
+</head>
+
+<!-- 折线图主体 -->
+<body>
+    <div id="main" style="height:600px;"></div>
+    <script type="text/javascript">
+
+var myChart = echarts.init(document.getElementById('main'));
+
+
+    option = {
+        title: {
+            text: '流量增长分析',
+            left: '1%',
+
+             textStyle: {
+            fontSize: 36,
+            fontWeight: '100',
+            align: 'center'
+
+        },
+        },
+
+        tooltip: {
+            trigger: 'axis'
+        },
+        grid: {
+            left: '5%',
+            right: '15%',
+            bottom: '10%'
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['6月1日', '6月2日', '6月3日', '6月4日', '6月5日', '6月6日', '6月7日', '6月8日', '6月9日', '6月10日', '6月11日', '6月12日', '6月13日', '6月14日', '6月15日', '6月16日', '6月17日', '6月18日', '6月19日', '6月20日','6月21日','6月22日','6月23日','6月24日','6月25日','6月26日','6月27日','6月28日','6月29日','6月30日']
+            
+        },
+        yAxis: {},
+        toolbox: {
+            right: 10,
+            feature: {
+                dataZoom: {
+                    yAxisIndex: 'none'
+                },
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        // dataZoom: [{
+        //     startValue: '2014-06-01'
+        // }, {
+        //     type: 'inside'
+        // }],
+        visualMap: {
+            top: 50,
+            right: 10,
+            pieces: [{
+                gt: 0,
+                lte: 150,
+                color: '#93CE07'
+            }, {
+                gt: 150,
+                lte: 300,
+                color: '#FBDB0F'
+            }, {
+                gt: 300,
+                lte: 450,
+                color: '#FC7D02'
+            }, {
+                gt: 450,
+                lte: 600,
+                color: '#FD0100'
+            }, {
+                gt: 600,
+                lte: 700,
+                color: '#AA069F'
+            }, {
+                gt: 800,
+                color: '#AC3B2A'
+            }],
+            outOfRange: {
+                color: '#EE82EE'
+            }
+        },
+        series: {
+            name: '当日浏览数',
+            type: 'line',
+            data: [300, 280, 250, 260, 270, 300, 550, 500, 400, 390, 380, 390, 400, 500, 600, 750, 800, 700, 600, 400,670,890,309,678,832,694,538,700,830,840],
+            markLine: {
+                silent: true,
+                lineStyle: {
+                    color: '#333'
+                },
+                data: [{
+                    yAxis: 0
+                }, {
+                    yAxis: 200
+                }, {
+                    yAxis: 400
+                }, {
+                    yAxis: 600
+                }, {
+                    yAxis: 800
+                }
+            ]
+            }
+        }
+    };
+
+
+    myChart.setOption(option);
+ </script>
+</body>
+</html>

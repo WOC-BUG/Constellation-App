@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:background="@color/mainColor">
+
+        <TextView
+            android:id="@+id/txtTopbar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            style="@style/titleTextSize"
+            android:text="@string/community"
+            android:textColor="@color/white"
+            android:layout_weight="9"/>
+
+        <ImageView
+            android:id="@+id/announceView"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/announce"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/itemsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        android:layout_above="@+id/bottomSpaceView"
+        android:layout_weight="1" />
+
+<!--    底部留白防止item显示不全-->
+    <LinearLayout
+        android:id="@+id/bottomSpaceView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/lightGray"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" />
+
+</RelativeLayout>

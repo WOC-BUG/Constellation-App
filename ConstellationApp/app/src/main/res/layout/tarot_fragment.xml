@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:background="@color/mainColor"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tarot_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            style="@style/titleTextSize"
+            android:text="@string/tarot_card"
+            android:textColor="@color/white"
+            android:layout_weight="9"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeBg"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/tarot_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/tarot_bg_purple"
+            android:scaleType="fitXY"
+            android:src="@mipmap/tarot_bg_purple" />
+        <ImageView
+            android:id="@+id/white_bg"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:background="#80FFFFFF"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:contentDescription="@string/white_background" />
+        <TextView
+            android:id="@+id/tarot_info"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/tarot_info"
+            android:textColor="#000000"/>
+    </RelativeLayout>
+
+    <!--  布局  -->
+    <LinearLayout
+        android:id="@+id/tarot_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="150dp"
+        android:layout_marginRight="25dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/topBar"
+        app:layout_constraintTop_toBottomOf="@+id/topBar">
+
+        <TextView
+            android:id="@+id/tarot_click_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="1"
+            android:text="@string/click_to_divine"
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/start_tarot_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/tarot_icon" />
+    </LinearLayout>
+</RelativeLayout>

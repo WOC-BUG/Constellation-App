@@ -1,0 +1,30 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--  标题文字大小  -->
+    <style name="titleTextSize">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!--  正文大小  -->
+    <style name="mainContentTextSize">
+        <item name="android:textSize">19sp</item>
+    </style>
+
+    <!--  副文大小  -->
+    <style name="adverbContentTextSize">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!--  小字大小  -->
+    <style name="littleTextSize">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+</resources>

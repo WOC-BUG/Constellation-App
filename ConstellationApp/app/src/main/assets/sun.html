@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ECharts</title>
+        <script src="echarts.min.js"></script>
+    </head>
+    <body>
+        <div id="main" style="height:900px;"></div>
+        <script type="text/javascript">
+var myChart = echarts.init(document.getElementById('main'));
+var data = [{
+    name: '木',
+    itemStyle: {
+        color: '#da0d68'
+    },
+  
+
+    children: [{
+        name: '狮子',
+        value: 1,
+        itemStyle: {
+            color: '#707070'
+        }
+           
+    }]
+},{
+    name:'水',
+    itemStyle: {
+        color: '#ebb40f'
+    },
+    children:[{
+        name:'巨蟹',
+        value: 1,
+        itemStyle: {
+            color: '#e1c315'
+        }
+    }]
+},{
+    name:'金',
+    itemStyle: {
+        color: '#c94930'
+    },
+    children:[{
+        name:'双子',
+        value: 1,
+        itemStyle: {
+            color: '#60bee1'
+        }
+    }]
+},{
+    name:'日',
+    itemStyle: {
+        color: '#b14d57'
+    },
+    children:[{
+        name:'金牛',
+        value: 1,
+        itemStyle: {
+            color: '#e5762e'
+        }
+    }] 
+},{
+    name:'火',
+    itemStyle: {
+        color: '#a87b64'
+    },
+    children:[{
+        name:'白羊',
+        value: 1,
+        itemStyle: {
+            color: '#c78869'
+        }
+    }]
+},{
+    name:'幸',
+    itemStyle: {
+        color: '#0aa3b5'
+    },
+    children:[{
+        name:'双鱼',
+        value: 1,
+        itemStyle: {
+            color: '#76c0cb'
+        }
+    }]
+
+},{
+    name:'土',
+    itemStyle: {
+        color: '#187a2f'
+    },
+    children:[{
+        name:'水瓶 ',
+        value: 1,
+        itemStyle: {
+            color: '#3aa255'
+        }
+    }]
+    
+},{
+    name:'海',
+    itemStyle: {
+        color: '#8f1c53'
+    },
+    children:[{
+        name:'摩羯 ',
+        value: 1,
+        itemStyle: {
+            color: '#975e6d'
+        }
+    }]
+},{
+name:'天',
+itemStyle: {
+        color: '#8b6439'
+    },
+    children:[{
+        name:'射手',
+        value: 1,
+        itemStyle: {
+            color: '#9db2b7'
+        }
+    }]
+},{
+    name:'北',
+    itemStyle: {
+        color: '#e5e513'
+    },
+    children:[{
+        name:'天蝎',
+        value: 1,
+        itemStyle: {
+            color: '#21c9c6'
+        }
+    }]
+},{
+    name:'冥',
+    itemStyle: {
+        color: '#5439eb'
+    },
+    children:[{
+        name:'天秤',
+        value: 1,
+        itemStyle: {
+            color: '#bc92d6'
+        }
+    }]
+},{
+    name:'月',
+    itemStyle: {
+        color: '#eb579c'
+    },
+    children:[{
+        name:'处女 ',
+        value: 1,
+        itemStyle: {
+            color: '#329054'
+        }
+    }]
+}],
+
+option = {
+    title: {
+        text: '占星之门',
+
+        textStyle: {
+            fontSize: 36,
+            fontWeight: '100',
+            align: 'center'
+
+        },
+        
+       
+    },
+    
+    series: {
+
+        type: 'sunburst',
+        highlightPolicy: 'ancestor',
+        data: data,
+        radius: ['15%', '80%'],
+        sort: null,
+        emphasis:{
+            itemStyle:{
+                color:'red'
+            }
+        },
+       
+        levels: [{}, {
+            r0: '15%',
+            r: '35%',
+            itemStyle: {
+                borderWidth: 2
+            },
+            label: {
+                rotate: 'tangential'
+            }
+        }, {
+            r0: '35%',
+            r: '70%',
+            label: {
+                align: 'right'
+            }
+        }, {
+            r0: '70%',
+            r: '72%',
+            label: {
+                position: 'outside',
+                padding: 3,
+                silent: false
+            },
+            itemStyle: {
+                borderWidth: 3
+            }
+        }]
+    }
+};
+
+
+myChart.setOption(option);
+ </script>
+ </body>
+</html>

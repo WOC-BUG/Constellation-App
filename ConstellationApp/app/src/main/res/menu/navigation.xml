@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fortune"
+        android:icon="@mipmap/fortune_off"
+        android:title="@string/fortune"/>
+
+    <item
+        android:id="@+id/test"
+        android:icon="@mipmap/test_off"
+        android:title="@string/test"/>
+
+    <item
+        android:id="@+id/community"
+        android:icon="@mipmap/community_off"
+        android:title="@string/community"/>
+
+    <item
+        android:id="@+id/divination"
+        android:icon="@mipmap/divination_off"
+        android:title="@string/divination"/>
+
+    <item
+        android:id="@+id/home"
+        android:icon="@mipmap/home_off"
+        android:title="@string/home"/>
+</menu>

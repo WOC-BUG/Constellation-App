@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--标题-->
+<TextView
+    android:id="@+id/title_persenal"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="星个人"
+    android:textColor="@color/white"
+    style="@style/titleTextSize"
+    android:gravity="center"
+    android:background="@color/mainColor"
+/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/personInfo"
+        android:layout_below="@+id/line1"
+        android:background="@drawable/person_background">
+
+        <ImageView
+            android:id="@+id/head_portrait"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/pig"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="10dp"
+            />
+        <!--姓名-->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/head_portrait"
+            android:textColor="@color/mainColor"
+            android:text="昵称："
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="20dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            ></TextView>
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/name"
+            android:textColor="@color/mainColor"
+            android:text="星星猪"
+            android:layout_marginTop="30sp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            ></TextView>
+
+        <!--星座-->
+        <TextView
+            android:id="@+id/constellationIndex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/head_portrait"
+            android:text="星座："
+            android:textColor="@color/mainColor"
+            android:textSize="16sp"
+            android:textStyle="bold"></TextView>
+        <TextView
+            android:id="@+id/constellation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userName"
+
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/constellationIndex"
+            android:text="天蝎座"
+            android:textColor="@color/mainColor"
+            android:textSize="16sp"
+            android:textStyle="bold"></TextView>
+
+        <!--粉丝-->
+        <TextView
+            android:id="@+id/fans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/userName"
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="20dp"
+            android:text="粉丝："
+            android:textColor="@color/mainColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            ></TextView>
+        <TextView
+            android:id="@+id/fansNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/fans"
+            android:layout_marginTop="30sp"
+            android:text="100"
+            android:textColor="@color/mainColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            ></TextView>
+
+        <!--关注-->
+        <TextView
+            android:id="@+id/focus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/constellation"
+            android:layout_below="@+id/fans"
+            android:text="关注："
+            android:textColor="@color/mainColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="20dp"
+            ></TextView>
+        <TextView
+            android:id="@+id/focusNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/focus"
+            android:layout_below="@+id/fansNum"
+            android:text="58"
+            android:textColor="@color/mainColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10sp"
+            ></TextView>
+    </RelativeLayout>
+
+    <!--上灰横线-->
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="15px"
+        android:layout_below="@+id/title_persenal" />
+
+    <!--下灰横线-->
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="15px"
+        android:layout_below="@+id/personInfo"
+        />
+
+
+    <!--历史记录-->
+    <TextView
+    android:id="@+id/history"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/line"
+    android:layout_centerHorizontal="true"
+    android:text="我的动态"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:textColor="@color/mainColor"
+    android:background="@null"/>
+    <TextView
+        android:id="@+id/historyNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line"
+        android:layout_toRightOf="@id/history"
+        android:text="(0)"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/mainColor"
+        android:background="@null"/>
+
+    <!--历史记录滚动布局-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/personalRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/history"
+        android:layout_above="@id/bottomSpaceView"
+        android:divider="@color/mainColor"
+        android:dividerHeight="2dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/fortune_text_border"/>
+<!--底部留白-->
+    <LinearLayout
+        android:id="@+id/bottomSpaceView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/lightGray"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" />
+
+</RelativeLayout>
