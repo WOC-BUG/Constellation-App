@@ -102,14 +102,14 @@ app
 |            |__ utils		# 基础工具层，可以放运算、字符串检查等工具
 |            |__ dao	    # dao层，实现数据库交互
 |            |__ model		# 放数据
-|			|	 |__ api	# API数据
-|			|	 |__ data	# 类图设计的类
+|            |  |__ api	# API数据
+|            |  |__ data	# 类图设计的类
 |            |__ httprequest  # 接口请求
 |            |__ view		# 视图
-|		          |__ activity
-|		          |__ fragment
-|		          |__ adapter	# 绑定数据
-|		          |__ holder	# 获取RecycleView的item项
+|               |__ activity
+|               |__ fragment
+|               |__ adapter	# 绑定数据
+|               |__ holder	# 获取RecycleView的item项
 |__ res
      |__ layout	# 布局文件
      |__ drawable	# 图片
